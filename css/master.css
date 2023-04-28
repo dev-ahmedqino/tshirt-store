@@ -1,0 +1,530 @@
+:root { 
+    --main-color: #ff9800; 
+    --secondary-color: #2c4755;
+    --section-padding: 60px;
+    --section-background: #fff;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+::selection {
+    background-color: black;
+    color: white;
+  }
+/* Start global rules */ 
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*small screen*/
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/*medium screen*/
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/*large screen*/
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* End global rules */ 
+/* Start Component that fixed for all heading */ 
+.special-heading {
+    color: #666666;
+    font-size: 18px;
+    text-align: center;
+    font-weight: lighter;
+    margin-bottom: 30px;
+}
+.special-heading + p {
+    font-size: 40px;
+    text-align: center;
+    color: #222; 
+    font-weight: bold;
+    margin-top: -25px;
+}
+@media (max-width: 767px) {
+    .special-heading {
+        font-size: 20px;
+    }
+    .special-heading + p {
+        margin: -10px;
+    }
+}
+/* End Component */ 
+/* Start Settings Box */ 
+.settings-box {
+    position: fixed;
+    left: -200px;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    z-index: 100;
+    min-height: 100vh;
+    transition: 0.3s;
+}
+.settings-box.open {
+    left: 0;
+}
+.settings-box .toggle-settings {
+    position: absolute;
+    right: -30px;
+    top: 100px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+}
+.settings-box .fa-gear {
+    padding: 8px 0;
+    width: 30px;
+}
+/* .settings-box .settings-container {
+
+} */
+.settings-box .settings-container .option-box {
+    padding: 10px;
+    text-align: center;
+    background-color: #EEE;
+    margin: 10px;
+}
+.settings-box .settings-container .option-box h4 {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+.settings-box .settings-container .option-box .colors-list{
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0 0;
+}
+.settings-box .settings-container .option-box .colors-list li {
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    border-radius: 50%;
+    border: 3px solid #EEE;
+    cursor: pointer;
+    display: inline-block;
+}
+.settings-box .settings-container .option-box .colors-list li.active {
+    border-color: #FFF;
+}
+.settings-box .settings-container .option-box .colors-list li:first-child {
+    background-color: #ff9800;
+}
+.settings-box .settings-container .option-box .colors-list li:nth-child(2) {
+    background-color: #e91e63;
+}
+.settings-box .settings-container .option-box .colors-list li:nth-child(3) {
+    background-color: #009688;
+}
+.settings-box .settings-container .option-box .colors-list li:nth-child(4) {
+    background-color: #03A9f4;
+}
+.settings-box .settings-container .option-box .colors-list li:nth-child(5) {
+    background-color: #4caf50;
+}
+.settings-box .option-box .random-backgrounds .yes, 
+.settings-box .option-box .random-backgrounds .no  {
+    width: 50px;
+    background-color: #009688;
+    color: #fff;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    opacity: .5;
+    cursor: pointer;
+}
+.settings-box .option-box .random-backgrounds span.active {
+    opacity: 1;
+}
+/* End Settings Box */ 
+/* Start Landing Page  */
+.landing-page {
+    min-height: 100vh; /* to inform the browser to take the all screen */
+    background-image: url(../images/2.jpg);
+    background-size: cover; /* to make the photo take the all screen */ 
+    position: relative;
+}
+.landing-page .overlay {
+    background-color: rgb(0, 0, 0, .6);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0; 
+    z-index: 1;
+}
+.header-area {
+    position: relative;
+    z-index: 2;
+    color: black;
+    display: flex;
+    padding: 10px;
+    background-color: white;
+}
+.header-area .logo {
+    width: 300px;
+    padding: 15px;
+    font-weight: bold;
+}
+.header-area .links {
+    list-style: none;
+    font-size: 15px;
+    padding-left: 0;
+    padding-right: 20px;
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
+}
+.header-area .links li {
+    display: inline-block;
+    margin-left: 10px;
+}
+.header-area .links li a {
+    color: black;
+    text-decoration: none;
+}
+.header-area .links li a:hover,
+.header-area .links li a.active {
+    color:var(--main-color);
+    transition: 0.3s;
+}
+.introduction-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+.introduction-text h1 {
+    font-size: 34px;
+    margin: 0 0 12px; 
+
+}
+.introduction-text span {
+    color:var(--main-color)
+}
+.introduction-text p {
+    line-height: 1.6;
+    font-size: 20px;
+    margin: 0;
+}
+.collection {
+    line-height: 1.6;
+    font-size: 15px;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    border: none;
+    font-weight: bold;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+}
+/* End Landing Page  */
+/* Start Summer Collection Page */ 
+.summer {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+    width: 95%; /* to control all the project to be in the center */ 
+    margin: auto; /* should be in Center */
+}
+.summer .summer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+.summer .summer-content .card {
+    background-color: white;
+}
+.summer .summer-content .card img {
+    max-width: 100%;
+}
+.summer .summer-content .card .info {
+    padding: 0px;
+}
+.summer .summer-content .card .info h3 {
+    margin: 0;
+}
+h6 {
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-top: 10px;
+    color: #b3aeae;
+    margin-bottom: 5px;
+}
+.summer .summer-content .card .info p {
+    color: #777;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+/* End Summer Collection Page */
+/* Start Base Collection Page */
+.base .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two columns of equal width */
+    grid-template-rows: auto auto; /* the rows will be sized automatically based on their content */
+    grid-gap: 10px; /* spacing between grid items */
+    align-content: center;
+    margin: auto; /* should be in Center */
+}
+.paragraph {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    grid-row: 2 / span 1; /* start at row 2 and span 1 row */
+    grid-column: 1; /* start at column 1 */
+}
+.paragraph:nth-child(1) {
+    grid-column: 1 / span 2; /* span 2 columns */
+}
+.small-photo {
+    grid-row: 1 / span 2; /* start at row 1 and span 2 rows */
+    grid-column: 1; /* start at column 1 */
+}
+.large-photo {
+    grid-row: 1 / span 2; /* start at row 1 and span 2 rows */
+    grid-column: 2; /* start at column 2 */
+}
+.paragraph h6 {
+    color: black;
+    margin-bottom: -35px;
+    font-size: 9px;
+    font-weight: lighter;
+}
+/* End Base Collection Page */
+/* Start fixed bg Page */
+.container-bg {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    width: 95%; /* to control all the project to be in the center */ 
+}
+.container-bg .bg-img {
+    width: 100%;
+    min-height: 100vb;
+    align-items: center;
+    background: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.8);
+    z-index: 1;
+}
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container-bg h6 {
+    color: white;
+}
+.container-bg h1 {
+    font-size: 40px;
+    margin-top: -5px;
+}
+.container-bg h4 {
+    font-size: 25px;
+    margin-top: -25px;
+}
+/* End fixed bg page */ 
+/* Start Review */
+.review {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    text-align: center;
+    width: 500px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+.review .comment {
+    text-decoration: underline;
+}
+.review .name { 
+    font-weight: lighter;
+    font-size: 10px;
+    text-transform: capitalize;
+    color: #222;
+    margin-bottom: 25px;
+}
+/* End Review */
+
+/* Start Categories */ 
+.categories {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    display: flex;
+    justify-content: space-evenly;
+    width: 95%; /* to control all the project to be in the center */ 
+    margin: auto; /* should be in Center */
+    position: relative;
+} 
+.categories img {
+    width: 600px;
+    height: 600px;
+}
+.content-categ {
+    border: 2px bold black;
+    background-color: white;
+    text-align: center;
+    color: black;
+    align-items: center;
+    position: absolute;
+    top: 600px;
+    width: 550px;
+    height: 50px;
+    margin-left: 20px;
+}  
+.content-categ h6 {
+    font-size: 10px;
+    color: black;
+    font-weight: bolder;
+}      
+.content-categ p {
+    color:#666666;
+    font-size: 10px;
+    font-weight: bold;
+}                                                 
+/* End Categories */ 
+/* Start Contact */
+.contact {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: #f5e8eb;
+    width: 95%; /* to control all the project to be in the center */ 
+    margin: auto; /* should be in Center */
+}
+.contact .info {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    text-align: center;
+}
+.contact .info .label {
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact .info .link {
+    display: block;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--main-color);
+    text-decoration: none;
+}
+.contact .info .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.contact .info .social i {
+    margin-left: 40px;
+    color: var(--secondary-color);
+}
+@media (max-width: 767px) {
+    .contact .info .link,
+    .contact .info .label {
+        font-size: 25px;
+    }
+}
+.email {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#email-field {
+    font-size: 15px;
+    color: #666666;
+    padding: 12px;
+    width: 300px;
+    border: none;
+    border-radius: 4px;
+}
+.bottom-links {
+    margin-top: 15px;
+}
+.bottom-links .links {
+    list-style: none;
+    font-size: 15px;
+    padding-left: 0;
+    padding-right: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: lighter;
+}
+.bottom-links .links li {
+    display: inline-block;
+    margin-left: 60px;
+    margin-top: 30px;
+}
+.bottom-links .links li a {
+    color: black;
+    text-decoration: none;
+}
+.bottom-links .links li a:hover,
+.bottom-links .links li a.active {
+    color:var(--main-color);
+    transition: 0.3s;
+}
+.collection-sub {
+    line-height: 1.6;
+    font-size: 15px;
+    margin-top: 20px;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    font-weight: bold;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+
+}
+/* End Contact */ 
+/* start footer */ 
+.footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 30px 10px;
+    font-size: 18px;
+    width: 95%; /* to control all the project to be in the center */ 
+    margin: auto; /* should be in Center */
+}
+.footer span { 
+    font-weight: bold;
+    color: var(--main-color);
+}
+/* end footer */ 
